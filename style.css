@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(#e66465, #9198e5);
+/*background-image: url(itbackgr.jpg);*/
+
+background-repeat: no-repeat;
+background-position: center;
+
+background-size: 100% 100%;
+
+}
+
+.container {
+  text-align: center;
+}
+
+.options {
+  margin-bottom: 20px;
+}
+
+.password-container {
+  position: relative;
+}
+
+/*#copy-btn {
+  position: absolute;
+  top: 40px; /* Adjust this value as needed */
+  left: 0;
+}*/
+
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
