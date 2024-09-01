@@ -6,13 +6,11 @@ body {
   height: 100vh;
   margin: 0;
   background: linear-gradient(#e66465, #9198e5);
-/*background-image: url(itbackgr.jpg);*/
-
-background-repeat: no-repeat;
-background-position: center;
-
-background-size: 100% 100%;
-
+  /* Uncomment the next line to use a background image */
+  /* background-image: url(itbackgr.jpg); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 .container {
@@ -27,13 +25,13 @@ background-size: 100% 100%;
   position: relative;
 }
 
-/*#copy-btn {
+#copy-btn {
   position: absolute;
   top: 40px; /* Adjust this value as needed */
   left: 0;
-}*/
-
+}
 
 input[type="checkbox"] {
   margin-right: 10px;
 }
+
