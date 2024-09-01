@@ -10,11 +10,16 @@ body {
   /* background-image: url(itbackgr.jpg); */
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover;
+  padding: 20px;
 }
 
 .container {
   text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .options {
@@ -23,6 +28,7 @@ body {
 
 .password-container {
   position: relative;
+  margin-bottom: 20px;
 }
 
 #copy-btn {
@@ -35,3 +41,19 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #copy-btn {
+    top: 30px; /* Adjust this value as needed */
+  }
+}
