@@ -29,12 +29,16 @@ body {
 .password-container {
   position: relative;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #copy-btn {
   position: absolute;
-  top: 40px; /* Adjust this value as needed */
-  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px; /* Adjust this value as needed */
 }
 
 input[type="checkbox"] {
@@ -54,6 +58,8 @@ input[type="checkbox"] {
   }
 
   #copy-btn {
-    top: 30px; /* Adjust this value as needed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
