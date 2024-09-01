@@ -34,11 +34,15 @@ body {
   align-items: center;
 }
 
+button {
+  font-size: 1.2em; /* Increase button font size */
+  padding: 10px 20px; /* Increase button padding */
+  margin: 10px; /* Add margin for spacing */
+}
+
 #copy-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 10px; /* Adjust this value as needed */
+  position: static; /* Remove absolute positioning */
+  transform: none; /* Remove transform */
 }
 
 input[type="checkbox"] {
@@ -57,9 +61,8 @@ input[type="checkbox"] {
     padding: 10px;
   }
 
-  #copy-btn {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  button {
+    width: 100%; /* Make buttons full width on mobile */
+    font-size: 1.5em; /* Increase font size on mobile */
   }
 }
