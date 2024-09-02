@@ -30,7 +30,7 @@ body {
   position: relative;
   margin-bottom: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -41,8 +41,8 @@ button {
 }
 
 #copy-btn {
-  position: static; /* Remove absolute positioning */
-  transform: none; /* Remove transform */
+  width: 100%; /* Make the button full width */
+  max-width: 200px; /* Set a max width */
 }
 
 input[type="checkbox"] {
@@ -64,5 +64,9 @@ input[type="checkbox"] {
   button {
     width: 100%; /* Make buttons full width on mobile */
     font-size: 1.5em; /* Increase font size on mobile */
+  }
+
+  #copy-btn {
+    max-width: 100%; /* Ensure the button remains full width on mobile */
   }
 }
