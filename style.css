@@ -63,6 +63,11 @@ input[type="checkbox"] {
     padding: 10px;
   }
 
+  .password-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   button {
     width: 100%; /* Make buttons full width on mobile */
     font-size: 1.5em; /* Increase font size on mobile */
@@ -72,5 +77,6 @@ input[type="checkbox"] {
     max-width: 100%; /* Ensure the button remains full width on mobile */
   }
 }
+
 
 
