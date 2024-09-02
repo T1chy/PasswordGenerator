@@ -34,7 +34,9 @@ body {
 .option-item {
   display: flex;
   align-items: center;
+  justify-content: center; /* Center align items */
   margin-bottom: 10px;
+  width: 100%; /* Ensure full width */
 }
 
 .password-container {
@@ -91,6 +93,7 @@ input[type="checkbox"] {
     max-width: 100%; /* Ensure the button remains full width on mobile */
   }
 }
+
 
 
 
