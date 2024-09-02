@@ -26,18 +26,19 @@ body {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .option-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  justify-content: flex-start;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .option-item label {
-  flex: 1;
+  margin-left: 10px;
 }
 
 .password-container {
@@ -76,12 +77,13 @@ input[type="checkbox"] {
   }
 
   .options {
-    align-items: flex-start;
+    align-items: center;
   }
 
   .option-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
   }
 
@@ -94,6 +96,7 @@ input[type="checkbox"] {
     max-width: 100%;
   }
 }
+
 
 
 
