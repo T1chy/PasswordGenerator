@@ -26,6 +26,15 @@ body {
 
 .options {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .password-container {
@@ -59,32 +68,17 @@ input[type="checkbox"] {
   }
 
   .container {
-    width: 90%;
+    width: 100%;
     padding: 10px;
   }
 
   .options {
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
   }
 
-  .options label,
-  .options input[type="checkbox"],
-  .options input[type="number"] {
+  .option-item {
     display: block;
-    margin-bottom: 10px;
-  }
-
-  .options input[type="checkbox"] {
-    margin-bottom: 0;
-  }
-
-  .options label[for="numbers"],
-  .options input#numbers,
-  .options label[for="length"],
-  .options input#length {
-    margin-top: 10px;
+    width: 100%;
   }
 
   button {
@@ -96,6 +90,7 @@ input[type="checkbox"] {
     max-width: 100%; /* Ensure the button remains full width on mobile */
   }
 }
+
 
 
 
