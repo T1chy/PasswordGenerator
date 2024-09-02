@@ -26,18 +26,18 @@ body {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the start */
+  align-items: flex-start;
 }
 
 .option-item {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  width: 100%; /* Ensure full width */
+  width: 100%;
 }
 
 .option-item label {
-  flex: 1; /* Allow label to take up remaining space */
+  flex: 1;
 }
 
 .password-container {
@@ -76,7 +76,7 @@ input[type="checkbox"] {
   }
 
   .options {
-    align-items: flex-start; /* Align items to the start on mobile */
+    align-items: flex-start;
   }
 
   .option-item {
@@ -94,6 +94,7 @@ input[type="checkbox"] {
     max-width: 100%;
   }
 }
+
 
 
 
