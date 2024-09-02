@@ -76,6 +76,17 @@ input[type="checkbox"] {
     margin-bottom: 10px;
   }
 
+  .options input[type="checkbox"] {
+    margin-bottom: 0;
+  }
+
+  .options label[for="numbers"],
+  .options input#numbers,
+  .options label[for="length"],
+  .options input#length {
+    margin-top: 10px;
+  }
+
   button {
     width: 100%; /* Make buttons full width on mobile */
     font-size: 1.5em; /* Increase font size on mobile */
@@ -85,6 +96,7 @@ input[type="checkbox"] {
     max-width: 100%; /* Ensure the button remains full width on mobile */
   }
 }
+
 
 
 
