@@ -42,3 +42,14 @@ function resetViewport() {
 document.querySelectorAll('input').forEach(input => {
   input.addEventListener('blur', resetViewport);
 });
+
+// Function to handle password length change
+function handleLengthChange(event) {
+  const input = event.target;
+  const value = parseInt(input.value);
+  if (value < 4) input.value = 4;
+  if (value > 20) input.value = 20;
+}
+
+// Add event listener to password length input
+document.getElementById('length').addEventListener('change', handleLengthChange);

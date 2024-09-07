@@ -95,6 +95,23 @@ input[type="checkbox"] {
   #copy-btn {
     max-width: 100%;
   }
+
+  .number-input {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .number-input button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .number-input input[type="number"] {
+    height: 40px;
+    width: 60px;
+    font-size: 18px;
+  }
 }
 
 /* Prevent zoom on focus for iOS devices */
@@ -104,6 +121,44 @@ input[type="checkbox"] {
   input {
     font-size: 16px;
   }
+}
+
+.number-input {
+  display: flex;
+  align-items: center;
+}
+
+.number-input button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.number-input input[type="number"] {
+  height: 30px;
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ddd;
+  margin: 0 5px;
+}
+
+.number-input input[type="number"]::-webkit-inner-spin-button,
+.number-input input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-input .minus:before {
+  content: "-";
+}
+
+.number-input .plus:after {
+  content: "+";
 }
 
 
