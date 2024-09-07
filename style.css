@@ -10,6 +10,7 @@ body {
   background-position: center;
   background-size: cover;
   padding: 20px;
+  touch-action: manipulation;
 }
 
 .container {
@@ -53,6 +54,13 @@ button {
   font-size: 1.2em;
   padding: 10px 20px;
   margin: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #copy-btn {
@@ -137,6 +145,13 @@ input[type="checkbox"] {
   border: 1px solid #ddd;
   cursor: pointer;
   font-size: 16px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .number-input input[type="number"] {
