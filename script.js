@@ -72,21 +72,37 @@ function handleLengthChange(event) {
 // Add event listener to password length input
 document.getElementById('length').addEventListener('change', handleLengthChange);
 
-// Add event listeners for plus and minus buttons
-function debounce(func, wait) {
-  let timeout;
-  return function(...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(this, args), wait);
-  };
+// Function to handle increment/decrement
+function handleStepChange(input, step) {
+  const currentValue = parseInt(input.value, 10);
+  const newValue = currentValue + step;
+  input.value = Math.max(4, Math.min(20, newValue)); // Ensure value is between 4 and 20
+  input.dispatchEvent(new Event('change')); // Trigger change event
 }
 
-document.querySelector('.minus').addEventListener('touchend', debounce(function(e) {
+// Add event listeners for plus and minus buttons
+const minusButton = document.querySelector('.minus');
+const plusButton = document.querySelector('.plus');
+const lengthInput = document.getElementById('length');
+
+// For desktop (click events)
+minusButton.addEventListener('click', function(e) {
   e.preventDefault();
-  this.parentNode.querySelector('input[type=number]').stepDown();
+  handleStepChange(lengthInput, -1);
+});
+
+plusButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  handleStepChange(lengthInput, 1);
+});
+
+// For mobile (touch events with debounce)
+minusButton.addEventListener('touchend', debounce(function(e) {
+  e.preventDefault();
+  handleStepChange(lengthInput, -1);
 }, 100));
 
-document.querySelector('.plus').addEventListener('touchend', debounce(function(e) {
+plusButton.addEventListener('touchend', debounce(function(e) {
   e.preventDefault();
-  this.parentNode.querySelector('input[type=number]').stepUp();
+  handleStepChange(lengthInput, 1);
 }, 100));
