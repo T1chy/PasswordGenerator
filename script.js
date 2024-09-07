@@ -30,3 +30,15 @@ function copyPassword() {
 
 // Event listener for generate button
 document.getElementById('generate-btn').addEventListener('click', generatePassword);
+
+// Function to reset viewport
+function resetViewport() {
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    window.scrollTo(0, 0);
+  }
+}
+
+// Add event listeners to input fields
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('blur', resetViewport);
+});
