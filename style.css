@@ -157,7 +157,7 @@ input[type="checkbox"] {
   content: "-";
 }
 
-.number-input .plus:after {
+.number-input .plus:before {
   content: "+";
 }
 

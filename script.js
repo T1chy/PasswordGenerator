@@ -33,8 +33,14 @@ document.getElementById('generate-btn').addEventListener('click', generatePasswo
 
 // Function to reset viewport
 function resetViewport() {
-  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-    window.scrollTo(0, 0);
+  if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+    const viewportMeta = document.querySelector('meta[name="viewport"]');
+    if (viewportMeta) {
+      viewportMeta.content = 'width=device-width, initial-scale=1';
+      setTimeout(function() {
+        viewportMeta.content = 'width=device-width, initial-scale=1, maximum-scale=1';
+      }, 300);
+    }
   }
 }
 
