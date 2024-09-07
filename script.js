@@ -24,8 +24,20 @@ function generatePassword() {
 // Function to copy password to clipboard
 function copyPassword() {
   var passwordInput = document.getElementById('password');
+  var copyButton = document.getElementById('copy-btn');
+  
   passwordInput.select();
   document.execCommand('copy');
+  
+  // Add visual feedback
+  copyButton.textContent = 'Copied!';
+  copyButton.classList.add('active');
+  
+  // Reset button after 2 seconds
+  setTimeout(function() {
+    copyButton.textContent = 'Copy Password';
+    copyButton.classList.remove('active');
+  }, 2000);
 }
 
 // Event listener for generate button

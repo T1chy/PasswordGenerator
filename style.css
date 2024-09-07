@@ -67,6 +67,12 @@ button {
 #copy-btn {
   width: 100%;
   max-width: 200px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#copy-btn.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
 input[type="checkbox"] {
