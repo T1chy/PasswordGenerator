@@ -59,3 +59,22 @@ function handleLengthChange(event) {
 
 // Add event listener to password length input
 document.getElementById('length').addEventListener('change', handleLengthChange);
+
+// Add event listeners for plus and minus buttons
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+document.querySelector('.minus').addEventListener('touchend', debounce(function(e) {
+  e.preventDefault();
+  this.parentNode.querySelector('input[type=number]').stepDown();
+}, 100));
+
+document.querySelector('.plus').addEventListener('touchend', debounce(function(e) {
+  e.preventDefault();
+  this.parentNode.querySelector('input[type=number]').stepUp();
+}, 100));

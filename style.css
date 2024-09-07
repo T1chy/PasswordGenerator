@@ -40,6 +40,7 @@ body {
 
 .option-item label {
   margin-left: 10px;
+  margin-right: 10px; /* Add this line */
 }
 
 .password-container {
@@ -90,6 +91,7 @@ input[type="checkbox"] {
 
   .option-item {
     display: flex;
+    flex-direction: column; /* Change this line */
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -107,6 +109,7 @@ input[type="checkbox"] {
   .number-input {
     justify-content: center;
     margin-top: 10px;
+    margin-left: 0; /* Add this line */
   }
 
   .number-input button {
@@ -134,6 +137,7 @@ input[type="checkbox"] {
 .number-input {
   display: flex;
   align-items: center;
+  margin-left: 10px; /* Add this line */
 }
 
 .number-input button {
