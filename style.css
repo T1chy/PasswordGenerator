@@ -179,11 +179,11 @@ input[type="checkbox"] {
 }
 
 .number-input .minus:before {
-  content: "-";
+  content: " ";
 }
 
 .number-input .plus:before {
-  content: "+";
+  content: " ";
 }
 
 

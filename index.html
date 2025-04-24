@@ -19,11 +19,15 @@
         <label for="numbers">Include Numbers</label>
       </div>
       <div class="option-item">
+        <input type="checkbox" id="pronounceable">
+        <label for="pronounceable">Use Pronounceable Words</label>
+      </div>
+      <div class="option-item">
         <label for="length">Password Length</label>
         <div class="number-input">
-          <button class="minus"></button>
+          <button class="minus">-</button>
           <input type="number" id="length" min="4" max="20" value="8">
-          <button class="plus"></button>
+          <button class="plus">+</button>
         </div>
       </div>
       <button id="generate-btn">Generate Password</button>
@@ -37,5 +41,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 

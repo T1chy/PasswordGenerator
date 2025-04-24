@@ -1,8 +1,30 @@
-// Function to generate password
+function generatePronounceablePassword(syllables = 4) {
+  const consonants = "bcdfghjklmnpqrstvwxyz";
+  const vowels = "aeiou";
+  let password = "";
+
+  for (let i = 0; i < syllables; i++) {
+    let c1 = consonants[Math.floor(Math.random() * consonants.length)];
+    let v = vowels[Math.floor(Math.random() * vowels.length)];
+    let c2 = consonants[Math.floor(Math.random() * consonants.length)];
+    password += c1 + v + c2 + " ";
+  }
+
+  return password.trim();
+}
+
 function generatePassword() {
   var useSpecialCharacters = document.getElementById('special-characters').checked;
   var useNumbers = document.getElementById('numbers').checked;
-  var passwordLength = document.getElementById('length').value;
+  var passwordLength = parseInt(document.getElementById('length').value);
+  var usePronounceable = document.getElementById('pronounceable').checked;
+
+  if (usePronounceable) {
+    var syllables = Math.floor(passwordLength / 3);
+    var pronPassword = generatePronounceablePassword(syllables);
+    document.getElementById('password').value = pronPassword;
+    return;
+  }
 
   var characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var specialChars = '!@#$%^&*()_+{}[]|:;<>,.?';
@@ -21,29 +43,24 @@ function generatePassword() {
   document.getElementById('password').value = password;
 }
 
-// Function to copy password to clipboard
 function copyPassword() {
   var passwordInput = document.getElementById('password');
   var copyButton = document.getElementById('copy-btn');
-  
+
   passwordInput.select();
   document.execCommand('copy');
-  
-  // Add visual feedback
+
   copyButton.textContent = 'Copied!';
   copyButton.classList.add('active');
-  
-  // Reset button after 2 seconds
+
   setTimeout(function() {
     copyButton.textContent = 'Copy Password';
     copyButton.classList.remove('active');
   }, 2000);
 }
 
-// Event listener for generate button
 document.getElementById('generate-btn').addEventListener('click', generatePassword);
 
-// Function to reset viewport
 function resetViewport() {
   if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
     const viewportMeta = document.querySelector('meta[name="viewport"]');
@@ -56,12 +73,10 @@ function resetViewport() {
   }
 }
 
-// Add event listeners to input fields
 document.querySelectorAll('input').forEach(input => {
   input.addEventListener('blur', resetViewport);
 });
 
-// Function to handle password length change
 function handleLengthChange(event) {
   const input = event.target;
   const value = parseInt(input.value);
@@ -69,23 +84,19 @@ function handleLengthChange(event) {
   if (value > 20) input.value = 20;
 }
 
-// Add event listener to password length input
 document.getElementById('length').addEventListener('change', handleLengthChange);
 
-// Function to handle increment/decrement
 function handleStepChange(input, step) {
   const currentValue = parseInt(input.value, 10);
   const newValue = currentValue + step;
-  input.value = Math.max(4, Math.min(20, newValue)); // Ensure value is between 4 and 20
-  input.dispatchEvent(new Event('change')); // Trigger change event
+  input.value = Math.max(4, Math.min(20, newValue));
+  input.dispatchEvent(new Event('change'));
 }
 
-// Add event listeners for plus and minus buttons
 const minusButton = document.querySelector('.minus');
 const plusButton = document.querySelector('.plus');
 const lengthInput = document.getElementById('length');
 
-// For desktop (click events)
 minusButton.addEventListener('click', function(e) {
   e.preventDefault();
   handleStepChange(lengthInput, -1);
@@ -96,7 +107,6 @@ plusButton.addEventListener('click', function(e) {
   handleStepChange(lengthInput, 1);
 });
 
-// For mobile (touch events with debounce)
 minusButton.addEventListener('touchend', debounce(function(e) {
   e.preventDefault();
   handleStepChange(lengthInput, -1);
@@ -106,3 +116,18 @@ plusButton.addEventListener('touchend', debounce(function(e) {
   e.preventDefault();
   handleStepChange(lengthInput, 1);
 }, 100));
+
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+// Disable other options when pronounceable is checked
+document.getElementById('pronounceable').addEventListener('change', function() {
+  const disabled = this.checked;
+  document.getElementById('special-characters').disabled = disabled;
+  document.getElementById('numbers').disabled = disabled;
+});
